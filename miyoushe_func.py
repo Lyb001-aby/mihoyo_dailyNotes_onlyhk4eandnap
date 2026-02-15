@@ -875,7 +875,7 @@ def process_zzz_note_data(data: Dict) -> Dict:
     if 'cafe_state' in data:
         cafe_map = {
             'CafeStateNo': '未饮用',
-            'CafeStateYes': '已饮用'
+            'CafeStateDone': '已饮用'
         }
         processed['cafe_state_cn'] = cafe_map.get(data['cafe_state'], data['cafe_state'])
     
