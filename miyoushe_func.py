@@ -1,7 +1,7 @@
 """
 米游社功能函数 - 游戏角色信息获取
-直接使用 MihoyoLoginManager 实例获取凭证
-目前看来崩铁对ds验证非常严格，没找到对应salt
+注意：凭证（gameroles是stoken，便笺是ltoken_v2和cookie_token_v2等等一系列其余cookies
+目前看来崩铁对ds验证非常严格，没找到对应salt，一直返回10001（非法请求），希望大佬能改进
 """
 
 import json
@@ -34,11 +34,11 @@ class DSGenerator:
         return f"{t},{r},{sign}"
 
     @staticmethod
-    def generate_ds(param_type=3, body=None, query=""):
+    def generate_ds(param_type=3, body=None, query=""):  #便笺全部使用ds2签名
         salt = "xV8v4Qu54lUKrEYFZkJhB8cuOh9Asafs"  #这个salt不确定，希望大佬能修改
         
         t = str(int(time.time()))
-        r = ''.join(random.choices("0123456789", k=6))
+        r = str(random.randint(100001,200000))  #api文档特别声明如果随机到100000要加542367，所以直接跳过100000
         
         # 处理body
         b = ""
