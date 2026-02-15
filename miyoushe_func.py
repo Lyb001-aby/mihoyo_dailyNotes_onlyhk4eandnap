@@ -38,7 +38,7 @@ class DSGenerator:
         salt = "xV8v4Qu54lUKrEYFZkJhB8cuOh9Asafs"  #这个salt不确定，希望大佬能修改
         
         t = str(int(time.time()))
-        r = str(random.randint(100001,200000))  #api文档特别声明如果随机到100000要加542367，所以直接跳过100000
+        r = random.randint(100001,200000)  #api文档特别声明如果随机到100000要加542367，所以直接跳过100000
         
         # 处理body
         b = ""
