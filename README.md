@@ -1,3 +1,3 @@
-# mihoyo_dailyNotes_onlyhk4eandnap
+# mihoyo_dailyNotes
 米哈游实时便笺获取（容易跳1034人机验证）  
 严禁广泛传播，跳脸官方！也请不要传B站
